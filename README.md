@@ -1,11 +1,4 @@
-# NEURAL — Network-based Extraction (with) Unbiased ROI Analysis (in) Live-imaging
-
-A neural-imaging analysis pipeline: Mask R-CNN ROI detection + PeakCaller event
-detection + figure generation for a single dataset.
-
-This package is the **subject** of the methods paper. The manuscript content
-(all 6 experiments, comparison panels A–I, LUMIN/Sun&Sudhof methods) lives one
-level up at `../Paper/`.
+# NEURAL: Network-based Extraction (with) Unbiased ROI Analysis (in) Live-imaging
 
 ## Layout
 
