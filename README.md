@@ -9,7 +9,7 @@ NEURAL/
 │   ├── scripts/        # training + inference (14 .py files)
 │   └── models/         # 4 production checkpoints (see below)
 ├── bursting/           # chained-IEI burst grouping + 5 metrics
-├── synchronicity/      # FluoroSNAPP per-recording sync (Dice) + FC (NeuroCa dropped 2026-06-07)
+├── synchronicity/      # FluoroSNAPP per-recording sync (Dice) + FC
 ├── figure_engine/      # render trace_grid / roi_overlay / summary_panel for ONE dataset
 ├── io/                 # nd2 + tif loader with manual fps/pixel_size/length overrides
 ├── utils/              # Excel I/O + Windows long-path helpers
