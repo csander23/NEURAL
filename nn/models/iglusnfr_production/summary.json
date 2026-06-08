@@ -1,0 +1,19 @@
+{
+  "run_dir": "N:\\Methods Paper\\Novel_Analysis\\actual_exports\\Final_NN\\data\\trained_models\\iglusnfr_production",
+  "best_f1": -1.0,
+  "best_checkpoint": "N:\\Methods Paper\\Novel_Analysis\\actual_exports\\Final_NN\\data\\trained_models\\iglusnfr_production\\checkpoints\\best_model.pth",
+  "last_checkpoint": "N:\\Methods Paper\\Novel_Analysis\\actual_exports\\Final_NN\\data\\trained_models\\iglusnfr_production\\checkpoints\\last_model.pth",
+  "n_train": 23,
+  "n_val": 0,
+  "epochs_completed": 30,
+  "auto_pos_weight_fg_used": 5.0,
+  "apply_imagenet_norm": true,
+  "training_pixel_size_um": 0.223,
+  "final_metrics": {
+    "epoch": 30,
+    "train_loss": 1.1578029510767565,
+    "loss_bce": 0.40840709598168085,
+    "loss_tv": 0.4545758496160093,
+    "loss_flow": 0.3631557355756345
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "peak_detection": {
+    "threshold": 0.005,
+    "baseline": "als",
+    "negate": true
+  },
+  "nn": {
+    "model": "igabasnfr",
+    "min_roi_px": 32,
+    "fg_threshold": 0.7,
+    "use_cached_inference": true
+  },
+  "visualization": {
+    "kind": "all",
+    "n_rois_per_video": 10,
+    "roi_selection": "top_activity",
+    "roi_indices": null,
+    "videos_to_show": null
+  },
+  "input": {
+    "path": "<absolute path to a .nd2 file or a folder containing many>",
+    "format": "auto",
+    "inference_dir": null,
+    "fps": null,
+    "pixel_size_um": null,
+    "n_frames": null,
+    "duration_s": null
+  },
+  "output": {
+    "dir": "./output_igabasnfr",
+    "format": "pdf",
+    "dpi": 140
+  },
+  "extraction": {
+    "roi_area_filter": {
+      "min_native_px": null,
+      "max_native_px": null
+    },
+    "pixel_weighting": [
+      {
+        "name": "mean",
+        "kind": "mean"
+      },
+      {
+        "name": "pixel_top30",
+        "kind": "pixel_top_pct",
+        "percent": 30.0,
+        "rank_by": "std"
+      },
+      {
+        "name": "pixel_std",
+        "kind": "pixel_std_weighted",
+        "exponent": 1.0
+      }
+    ]
+  }
+}

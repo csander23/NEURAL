@@ -1,0 +1,19 @@
+{
+  "run_dir": "N:\\Methods Paper\\Novel_Analysis\\actual_exports\\Final_NN\\data\\trained_models\\calcium_imaging_production",
+  "best_f1": -1.0,
+  "best_checkpoint": "N:\\Methods Paper\\Novel_Analysis\\actual_exports\\Final_NN\\data\\trained_models\\calcium_imaging_production\\checkpoints\\best_model.pth",
+  "last_checkpoint": "N:\\Methods Paper\\Novel_Analysis\\actual_exports\\Final_NN\\data\\trained_models\\calcium_imaging_production\\checkpoints\\last_model.pth",
+  "n_train": 23,
+  "n_val": 0,
+  "epochs_completed": 30,
+  "auto_pos_weight_fg_used": 2.261453253751273,
+  "apply_imagenet_norm": true,
+  "training_pixel_size_um": 0.223,
+  "final_metrics": {
+    "epoch": 30,
+    "train_loss": 1.5012874603271484,
+    "loss_bce": 0.8040237880271414,
+    "loss_tv": 0.36389239197191986,
+    "loss_flow": 0.45866468160048773
+  }
+}

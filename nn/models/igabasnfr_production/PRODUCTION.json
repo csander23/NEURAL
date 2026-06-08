@@ -1,0 +1,12 @@
+{
+  "indicator": "igabasnfr",
+  "best_f1": -1.0,
+  "epochs_completed": 30,
+  "n_train": 25,
+  "n_val": 0,
+  "calibrated_thresholds": {
+    "ff_fg_threshold": 0.7,
+    "ff_vote_threshold": 12.0
+  },
+  "trained_at": "2026-05-18T15:55:24"
+}
