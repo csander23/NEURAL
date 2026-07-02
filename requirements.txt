@@ -29,5 +29,3 @@ pypdf
 #
 # CPU-only fallback:
 #   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-#
-# See setup_env.ps1 for a one-command bootstrap that does all of the above.

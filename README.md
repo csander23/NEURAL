@@ -2,20 +2,10 @@
 
 ## Installation
 
-NEURAL needs Python 3.10+. The dependency list lives in `requirements.txt`, and
-`setup_env.ps1` bootstraps a ready-to-run virtualenv (installs everything,
-including the correct torch build for your GPU).
-
-```powershell
-# one command: creates ..\.venv and installs all deps + torch (default cu121;
-# use -Cuda cpu for CPU-only, or -Cuda cu118 for older CUDA)
-powershell -ExecutionPolicy Bypass -File NEURAL\setup_env.ps1
-```
-
-Or manually:
+NEURAL needs Python 3.10+. Install the dependencies from `requirements.txt`:
 
 ```bash
-pip install -r NEURAL/requirements.txt
+pip install -r requirements.txt
 # torch is GPU-specific — install the build matching your CUDA:
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 ```
