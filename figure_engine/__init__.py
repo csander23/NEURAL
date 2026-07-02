@@ -2,7 +2,7 @@
 
 This is the pipeline's own renderer. It knows nothing about manuscript
 experiments, comparison panels, or non-NN methods. For those, use
-Paper.paper_engine.
+Methods_Paper.paper_engine.
 
 Public entry-point:
     render_dataset(config_path_or_dict, out_dir=None) -> dict

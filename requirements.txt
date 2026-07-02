@@ -1,0 +1,33 @@
+# NEURAL runtime dependencies (Python 3.10+)
+#
+# Core numerics + I/O — needed for extraction, peak detection, figures
+numpy
+scipy
+pandas
+matplotlib
+scikit-image
+tifffile
+openpyxl
+pyyaml
+tqdm
+
+# Microscopy file reader (.nd2). io/ and nn/scripts/summary_images.py read raw nd2.
+nd2
+
+# Manuscript figure compositing (Methods_Paper.paper_engine merges panels)
+pypdf
+
+# Interactive ROI labeler only (nn/scripts/roi_labeler.py) — uncomment if labeling:
+# opencv-python
+
+# --- Neural network (torch) -------------------------------------------------
+# torch/torchvision are NOT listed here because the correct wheel depends on your
+# GPU/CUDA. Install them with the matching CUDA index URL. For the workstation
+# GPU (Quadro RTX 4000, driver 535 => CUDA 12.1):
+#
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#
+# CPU-only fallback:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#
+# See setup_env.ps1 for a one-command bootstrap that does all of the above.

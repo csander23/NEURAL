@@ -1,8 +1,8 @@
 {
-  "run_dir": "N:\\Methods Paper\\Novel_Analysis\\actual_exports\\Final_NN\\data\\trained_models\\igabasnfr_production",
+  "run_dir": ".",
   "best_f1": -1.0,
-  "best_checkpoint": "N:\\Methods Paper\\Novel_Analysis\\actual_exports\\Final_NN\\data\\trained_models\\igabasnfr_production\\checkpoints\\best_model.pth",
-  "last_checkpoint": "N:\\Methods Paper\\Novel_Analysis\\actual_exports\\Final_NN\\data\\trained_models\\igabasnfr_production\\checkpoints\\last_model.pth",
+  "best_checkpoint": "checkpoints/best_model.pth",
+  "last_checkpoint": "checkpoints/last_model.pth",
   "n_train": 25,
   "n_val": 0,
   "epochs_completed": 30,

@@ -1,14 +1,14 @@
 """NEURAL — Network-based Extraction (with) Unbiased ROI Analysis (in) Live-imaging.
 
 Subject of the methods paper. Knows how to:
-  - segment ROIs with a Mask R-CNN (4 NN models supplied)
+  - segment ROIs with a neural network (4 pre-trained production models supplied)
   - extract per-ROI traces from .nd2 or .tif video
   - detect events with PeakCaller (convex or ALS baseline)
   - render single-dataset trace_grid / roi_overlay / summary panels
   - train a new NN from labeled ROIs
 
 Knows NOTHING about the manuscript's specific 6 experiments or any
-manual-vs-NN comparison; that all lives in ../Paper/.
+manual-vs-NN comparison; that all lives in ../Methods_Paper/.
 
 Top-level shape:
   NEURAL.peakcaller      — convex/ALS baseline + multiplicative D + find_peaks

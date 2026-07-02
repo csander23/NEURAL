@@ -2,9 +2,8 @@
 
 PubMed: https://pubmed.ncbi.nlm.nih.gov/29037171/
 
-These functions are copied verbatim from the Python port at
-``N:\\Methods Paper\\Novel_Analysis\\actual_exports\\experiments post NN
-parameterization\\experiments_peakdetection\\newpeakcaller_05.11.2026\\analysis.py``
+These functions are copied verbatim from the Python PeakCaller port
+(``newpeakcaller_05.11.2026/analysis.py`` in the original Novel_Analysis tree),
 which is itself a faithful translation of the Hussman Institute MATLAB
 ``PeakCaller.m`` script (forward + backward pass with explicit peak deletion,
 multiplicative D-scale thresholds, half-before/half-after computed during

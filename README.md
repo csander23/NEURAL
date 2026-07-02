@@ -1,11 +1,34 @@
 # NEURAL: Network-based Extraction (with) Unbiased ROI Analysis (in) Live-imaging
 
+## Installation
+
+NEURAL needs Python 3.10+. The dependency list lives in `requirements.txt`, and
+`setup_env.ps1` bootstraps a ready-to-run virtualenv (installs everything,
+including the correct torch build for your GPU).
+
+```powershell
+# one command: creates ..\.venv and installs all deps + torch (default cu121;
+# use -Cuda cpu for CPU-only, or -Cuda cu118 for older CUDA)
+powershell -ExecutionPolicy Bypass -File NEURAL\setup_env.ps1
+```
+
+Or manually:
+
+```bash
+pip install -r NEURAL/requirements.txt
+# torch is GPU-specific — install the build matching your CUDA:
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+```
+
+torch/torchvision are intentionally not pinned in `requirements.txt` because the
+correct wheel depends on your CUDA version — see the comments in that file.
+
 ## Layout
 
 ```
 NEURAL/
 ├── peakcaller/         # convex / ALS baseline, multiplicative D, find_peaks
-├── nn/                 # Mask R-CNN
+├── nn/                 # neural network
 │   ├── scripts/        # training + inference (14 .py files)
 │   └── models/         # 4 production checkpoints (see below)
 ├── bursting/           # chained-IEI burst grouping + 5 metrics
