@@ -79,9 +79,11 @@ def extract_traces_streaming(
     """One pass over the file → (N, T) raw fluorescence traces.
 
     Equivalent to `[extract_trace(video, masks[i]) for i in range(N)]` but
-    streams frames instead of holding the full video in RAM. Peak memory is
-    dominated by the flattened mask matrix (N * H * W * 4 bytes), which for
-    N=200, H=W=1192 is ~1.1 GB — fine.
+    streams frames instead of holding the full video in RAM. Masks are held as
+    a sparse CSR matrix (only ~ROI-area nonzeros), so per-frame cost scales with
+    total ROI pixels rather than N * H * W, and no dense (N, H*W) matrix is
+    allocated. `(M @ flat) / areas` is the identical sum-then-divide as the dense
+    `masks_flat @ flat / areas` — bit-for-bit for the integer frame values here.
     """
     masks = np.asarray(masks)
     if masks.ndim != 3:
@@ -93,8 +95,10 @@ def extract_traces_streaming(
         T = sum(1 for _ in frames)
         return np.zeros((0, T), dtype=np.float32)
 
-    masks_flat = masks.reshape(N, -1).astype(np.float32, copy=False)
+    from scipy import sparse
+    masks_flat = masks.reshape(N, -1)
     areas = masks_flat.sum(axis=1).clip(min=1.0).astype(np.float32)  # (N,)
+    M = sparse.csr_matrix(masks_flat.astype(np.float32))   # (N, H*W), nonzeros only
 
     frames, _H, _W, _px = _iter_frames(path)
     if (_H, _W) != (H, W):
@@ -105,7 +109,7 @@ def extract_traces_streaming(
     per_frame: list[np.ndarray] = []
     for frame in frames:
         flat = np.asarray(frame, dtype=np.float32).reshape(-1)
-        per_frame.append(masks_flat @ flat / areas)   # (N,)
+        per_frame.append((M @ flat) / areas)   # (N,)  == dense masks_flat @ flat / areas
     if not per_frame:
         return np.zeros((N, 0), dtype=np.float32)
     return np.stack(per_frame, axis=1).astype(np.float32)   # (N, T)
